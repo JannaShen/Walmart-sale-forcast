@@ -6,6 +6,6 @@
 ### Methods:
  Baseline model: LSTM.csv        scores: 18641
  
-    Set train, features, stores as input for training the mapping model between features and sales results.
+ Set train, features, stores as input for training the mapping model between features and sales results.
    
   
