@@ -88,9 +88,9 @@ val_set_array = val_set.iloc[:,:].values
 test_set_array=test_set.iloc[:,:].values
 
 sc=preprocessing.MinMaxScaler(feature_range=(0,1))
+test_set_scaled=sc.fit_transform(test_set_array[:,:])
 train_set_scaled = sc.fit_transform(train_set_array[:,:])
 val_set_scaled = sc.fit_transform(val_set_array[:,:])
-test_set_scaled=sc.fit_transform(test_set_array[:,:])
 
 x_train=[]
 y_train=[]
@@ -126,7 +126,7 @@ regressor.compile(optimizer='adam',
 
 history = regressor.fit(x_train, 
               y_train, 
-              epochs = 1, 
+              epochs = 25, 
               batch_size = 512, 
               validation_data = (x_val, y_val),
               verbose = 1)
@@ -143,6 +143,6 @@ print(predicted_weekly_sales)
 sample=processed_test[['Store','Dept','Date']]
 sample['ID']=sample['Store'].astype(str)+'_'+sample['Dept'].astype(str)+'_'+sample['Date'].astype(str)
 sample['Weekly_Sales']=predicted_weekly_sales
-sample.drop(['Store','Dept','Date'])
+sample.drop(['Store','Dept','Date'], axis=1)
 sample.to_csv("sample.csv",index=False)
 
