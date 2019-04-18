@@ -7,6 +7,7 @@
  Machine learning models  sale.py
  
   Linear regression, Ridge Regression, Decision Tree, Random Forest
+  
        19856                 19464            19293             19278
  Baseline model: LSTM.csv        scores: 18641
  
