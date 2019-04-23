@@ -8,6 +8,7 @@
  
   Linear regression, Ridge Regression, Decision Tree, Random Forest
        19856                 19464            19293             19278
+       
  Baseline model: LSTM.csv        scores: 18641
  
   train, features, stores as input, training the mapping model between features and sales results.
